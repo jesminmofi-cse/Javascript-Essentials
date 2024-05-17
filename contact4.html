@@ -1,0 +1,83 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Contact Us</title>
+<style>
+  /* Basic styling for the contact form */
+  form {
+    max-width: 400px;
+    margin: 0 auto;
+  }
+  label, input, textarea {
+    display: block;
+    margin-bottom: 10px;
+  }
+  textarea {
+    height: 100px;
+  }
+  button {
+    padding: 10px 20px;
+    background-color: #007bff;
+    color: #fff;
+    border: none;
+    cursor: pointer;
+  }
+  button:hover {
+    background-color: #0056b3;
+  }
+</style>
+</head>
+<body>
+
+<h2>Contact Us</h2>
+
+<form id="contactForm">
+  <label for="name">Name:</label>
+  <input type="text" id="name" name="name" required>
+
+  <label for="email">Email:</label>
+  <input type="email" id="email" name="email" required>
+
+  <label for="message">Message:</label>
+  <textarea id="message" name="message" required></textarea>
+
+  <button type="submit">Send Message</button>
+</form>
+
+<!-- Script to handle form submission -->
+<script>
+  document.getElementById('contactForm').addEventListener('submit', function(event) {
+    event.preventDefault(); // Prevent the default form submission
+    
+    // Get form data
+    var formData = new FormData(this);
+    
+    // Display form data (you can replace this with your own logic to send the data to a server)
+    for (var pair of formData.entries()) {
+      console.log(pair[0] + ': ' + pair[1]);
+    }
+    // You can add code here to send the form data to a server using AJAX or other methods
+    // Example using fetch API:
+    /*
+    fetch('your-server-url', {
+      method: 'POST',
+      body: formData
+    })
+    .then(response => response.json())
+    .then(data => {
+      // Handle response from server
+    })
+    .catch(error => {
+      console.error('Error:', error);
+    });
+    */
+    
+    // Clear form fields after submission
+    this.reset();
+  });
+</script>
+
+</body>
+</html>
