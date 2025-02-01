@@ -1,47 +1,56 @@
-*{
-    margin:0;
-    padding:0;
+* {
+    margin: 0;
+    padding: 0;
     font-family: 'Poppins', sans-serif;
     box-sizing: border-box;
-
 }
-.container{
+
+.container {
     width: 100%;
     min-height: 100vh;
-    background-image:linear-gradient(rgba(9,0,77,0.65),rgba(9,0,77,0.65)),url("https://theworldpursuit.com/wp-content/uploads/2018/10/Best-Cave-Hotels-in-Cappadocia17-986x657.jpg");
+    background-image: linear-gradient(rgba(9, 0, 77, 0.65), rgba(9, 0, 77, 0.65)), url("https://theworldpursuit.com/wp-content/uploads/2018/10/Best-Cave-Hotels-in-Cappadocia17-986x657.jpg");
     background-size: cover;
     background-position: center;
     padding: 10px 8%;
 }
-nav{
+
+nav {
     width: 100%;
-    display:flex;
+    display: flex;
     align-items: center;
     justify-content: space-between;
-    padding:10px 0;
-
+    padding: 10px 0;
 }
-.logo{
+
+.logo {
     width: 180px;
     cursor: pointer;
 }
-nav ul{
-    list-style:none;
+
+nav ul {
+    list-style: none;
     width: 100%;
     text-align: right;
     padding-right: 60px;
-
 }
-nav ul li{
-    diplay:inline-block;
+
+nav ul li {
+    display: inline-block; /* Corrected typo: 'diplay' to 'display' */
     margin: 10px 20px;
+}
 
-}
-nav ul li a{
-    color:#fff;
+nav ul li a {
+    color: #fff;
     text-decoration: none;
+    font-weight: 500;
+    transition: color 0.3s ease;
 }
-.btn{
+
+nav ul li a:hover {
+    color: #f5168d; /* Add hover effect for links */
+}
+
+.btn {
     display: flex;
     align-items: center;
     padding: 10px 20px;
@@ -49,91 +58,153 @@ nav ul li a{
     outline: 0;
     border-radius: 5px;
     background: #f5168d;
-    color:#fff;
+    color: #fff;
     font-weight: 500;
-    cursor:pointer;
-
-
+    cursor: pointer;
+    transition: background 0.3s ease;
 }
-.btn img{
-    width: 50px;
+
+.btn:hover {
+    background: #d4147a; /* Add hover effect for button */
+}
+
+.btn img {
+    width: 20px; /* Adjusted size for better proportion */
     margin-right: 10px;
 }
-.content{
-    margin: top 14%;
-    color:#fff;
-    max-width:620px;
 
+.content {
+    margin-top: 14%; /* Corrected typo: 'margin: top 14%' to 'margin-top: 14%' */
+    color: #fff;
+    max-width: 620px;
 }
-.content h1{
+
+.content h1 {
     font-size: 70px;
-    font-weight:600;
-    line-height:85px;
-    margin - bottom: 25px; 
+    font-weight: 600;
+    line-height: 85px;
+    margin-bottom: 25px; /* Corrected typo: 'margin - bottom' to 'margin-bottom' */
 }
-.content form{
-    display:flex;
-    align-items: center ;
-    background: #fff;
-    border-radius:5px;
-    padding:10px;
-    margin-top: 30px;
 
+.content p {
+    font-size: 18px;
+    line-height: 1.6;
+    margin-bottom: 30px;
 }
-.content form input{
+
+.content form {
+    display: flex;
+    align-items: center;
+    background: #fff;
+    border-radius: 5px;
+    padding: 10px;
+    margin-top: 30px;
+}
+
+.content form input {
     border: 0;
     outline: 0;
-    width:100%;
-    font-size:16px;
-    padding-left :10px;
+    width: 100%;
+    font-size: 16px;
+    padding-left: 10px;
 }
-.content form .btn{
+
+.content form .btn {
     font-size: 15px;
-    padding:10px 30px;
+    padding: 10px 30px;
+    margin-left: 10px;
 }
-  
 
 .search-container {
     position: relative;
-    margin: 20px;
+    margin: 20px 0;
 }
 
 .search-container input {
-    padding: 5px;
+    padding: 10px;
+    width: 300px;
+    border: 1px solid #ccc;
+    border-radius: 5px;
+    font-size: 16px;
 }
 
 .search-container button {
-    padding: 5px;
-    margin-left: 5px;
+    padding: 10px 20px;
+    margin-left: 10px;
+    border: none;
+    border-radius: 5px;
+    cursor: pointer;
+    font-size: 16px;
+    transition: background 0.3s ease;
+}
+
+.search-container #clear-btn {
+    background: #ccc;
+    color: #333;
+}
+
+.search-container #clear-btn:hover {
+    background: #bbb;
+}
+
+.search-container #submit-btn {
+    background: #f5168d;
+    color: #fff;
+}
+
+.search-container #submit-btn:hover {
+    background: #d4147a;
 }
 
 .suggestions {
     position: absolute;
-    top: 40px;
+    top: 50px;
     left: 0;
     right: 0;
     background-color: white;
     border: 1px solid #ccc;
+    border-radius: 5px;
     max-height: 200px;
     overflow-y: auto;
     display: none;
     z-index: 1000;
 }
 
-.suggestions img {
-    width: 50px;
-    height: 50px;
-    margin: 5px;
+.suggestions div {
+    padding: 10px;
     cursor: pointer;
+    transition: background 0.3s ease;
+}
+
+.suggestions div:hover {
+    background: #f1f1f1;
+}
+
+.images-container {
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: center;
+    margin-top: 30px;
 }
 
 .images-container img {
-    display: none;
-    width: 100px;
-    height: 100px;
+    width: 300px;
+    height: 200px;
     margin: 10px;
+    border-radius: 10px;
+    object-fit: cover;
+    transition: transform 0.3s ease, box-shadow 0.3s ease;
 }
+
+.images-container img:hover {
+    transform: scale(1.05);
+    box-shadow: 0 4px 15px rgba(0, 0, 0, 0.2);
+}
+
 .image-description {
     display: none;
     margin: 10px;
+    color: #fff;
+    text-align: center;
+    font-size: 16px;
 }
